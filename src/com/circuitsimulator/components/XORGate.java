@@ -6,7 +6,7 @@ public class XORGate extends LogicGate {
     public XORGate(String id, String name, int inputCount) {
         super(id, name);
         componentTypeId = 13;
-        initializeNodes(2, 1);  // 2 inputs, 1 output
+        initializeNodes(Math.max(2, inputCount), 1);  // at least 2 inputs, 1 output
         evaluate();  // Set initial output state
     }
 

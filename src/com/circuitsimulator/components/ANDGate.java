@@ -8,7 +8,7 @@ public class ANDGate extends LogicGate {
         componentTypeId = 10;
         
         // Initialize input and output nodes
-        initializeNodes(2, 1);  // 2 inputs, 1 output
+        initializeNodes(Math.max(2, inputCount), 1);  // at least 2 inputs, 1 output
         evaluate();  // Set initial output state
     }
 

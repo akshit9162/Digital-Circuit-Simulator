@@ -2,7 +2,7 @@
 # This file provides convenient commands for building and running the project
 # Usage: make <target>
 
-.PHONY: all compile run clean help debug
+.PHONY: all compile run clean help debug test
 
 JAVA_SRC := src
 JAVA_BIN := bin
@@ -30,6 +30,12 @@ run: compile
 	@echo "Running Digital Circuit Simulator"
 	@echo "========================================"
 	@java -cp $(JAVA_BIN) $(MAIN_CLASS)
+
+# Headless tests for the simulation core (no GUI window)
+test:
+	@mkdir -p $(JAVA_BIN)
+	@javac -d $(JAVA_BIN) $$(find $(JAVA_SRC) test -name "*.java")
+	@java -Djava.awt.headless=true -cp $(JAVA_BIN) com.circuitsimulator.SimulatorTest
 
 # Run only (assuming already compiled)
 start:
@@ -60,6 +66,7 @@ help:
 	@echo "Available targets:"
 	@echo "  make compile  - Compile all Java source files"
 	@echo "  make run      - Compile and run the application"
+	@echo "  make test     - Run the headless simulation tests"
 	@echo "  make start    - Run already compiled application"
 	@echo "  make clean    - Remove compiled class files"
 	@echo "  make check    - Check Java installation"
