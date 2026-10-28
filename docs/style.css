@@ -101,7 +101,7 @@ main > section:not(.hero) { padding-block: var(--space-2xl); border-top: var(--r
 
 .scroll { overflow-x: auto; }
 .scroll, pre { scroll-margin-top: calc(var(--nav-h) + var(--space-xl)); }
-pre { margin: 0; padding: var(--space-lg); overflow-x: auto; white-space: pre-wrap; overflow-wrap: anywhere; background: var(--color-paper-3); border: var(--rule-bar) solid var(--color-ink); color: var(--color-ink); font-size: var(--text-sm); line-height: 1.75; }
+pre { margin: 0; padding: var(--space-lg); overflow-x: auto; background: var(--color-paper-3); border: var(--rule-bar) solid var(--color-ink); color: var(--color-ink); font-size: var(--text-sm); line-height: 1.75; }
 pre code { font-size: 1em; }
 
 /* footer */
